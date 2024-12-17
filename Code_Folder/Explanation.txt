@@ -1,0 +1,37 @@
+Task 1:
+The code script uses a Decision Tree Classifier to predict activities based on sensor data. It reads the data from files, trains the model multiple times with different tree depths, and checks how well it performs on both training and testing data. The results are plotted on a graph, showing how accuracy changes as the model gets more complex. This helps to see where the model performs best without being too simple or too complex.
+
+
+
+Task 2:
+In the K-Fold Cross-Validation section, the training data is split into five folds, where each fold is used once as a validation set while the rest serve as the training set. For each model, the accuracy, precision, recall, and F1 score are calculated for every fold. The average of these scores is printed for each model, giving an idea of how well the models generalize across different splits of the training data.
+
+The Leave-One-Subject-Out Cross-Validation (LOSO-CV) approach is applied next. Here, the training data is grouped by subjects, and each subject's data is left out in turn as the test set while the model is trained on the remaining subjects' data. This method ensures the models are tested in a way that reflects real-world scenarios, where the system encounters entirely unseen individuals. Similar to the previous section, the models' performance is evaluated using accuracy, precision, recall, and F1 score, and the averages are printed for comparison.
+
+By performing both cross-validation techniques, we can perform a comprehensive evaluation of each model, ensuring robustness and helping to identify the best-performing algorithm for this dataset.
+
+
+
+Task 3:
+Principal Component Analysis (PCA) is done for dimensionality reduction to the UCI HAR Dataset, followed by evaluation of four machine learning models (Random Forest, Decision Tree, Logistic Regression, and AdaBoost). The models are assessed using two cross-validation techniques: K-Fold Cross-Validation and Leave-One-Subject-Out Cross-Validation (LOSO-CV).
+
+Initially, the training data is loaded and any missing or inconsistent values are removed to ensure clean data. The PCA technique is then used to reduce the feature space while retaining 95% of the variance, simplifying the dataset for faster model training and testing. After this, the script performs K-Fold Cross-Validation with 5 folds, training and testing each model on different splits of the data and calculating performance metrics like accuracy, precision, recall, and F1 score. The average of these metrics is printed for each model.
+
+Then Leave-One-Subject-Out Cross-Validation method is used, where each subject's data is held out as a test set while the model is trained on the rest of the data. This approach ensures that the models are tested on data from unseen subjects, offering a more realistic evaluation. Again, the performance metrics are computed and averaged for each model.
+
+By comparing the results from both cross-validation techniques, we determine which model performs best, considering dimensionality reduction using PCA.
+
+
+
+
+Task 4:
+Three different neural network models (1D-CNN, MLP, and LSTM) on the UCI HAR Dataset to classify human activities using inertial sensor data. It loads the training and testing data, which consists of accelerometer and gyroscope signals, and the corresponding activity labels. The labels are preprocessed into one-hot encoded format for compatibility with the neural network models.
+
+The models used are:
+1D-CNN: A Convolutional Neural Network designed for sequential data, which is ideal for time-series activity recognition.
+
+MLP: A Multilayer Perceptron with fully connected layers, used for general classification tasks.
+
+LSTM: A Long Short-Term Memory network, well-suited for time-series data, capturing long-term dependencies.
+
+K-Fold Cross-Validation is used to evaluate each model, splitting the training data into 5 folds. For each fold, the model is trained and tested on different subsets of the data, and metrics such as accuracy, precision, recall, and F1 score are calculated. These metrics are averaged across all folds to assess the overall performance of each model.
